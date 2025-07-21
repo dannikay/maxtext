@@ -1,5 +1,5 @@
 # We recommend using lower bounds for dependencies instead of exact == pins.
-jax>=0.4.30
+jax==0.6.0
 jaxlib>=0.4.30
 orbax-checkpoint>=0.5.12
 absl-py>=2.1.0
@@ -29,8 +29,11 @@ pyink>=24.10.1
 pre-commit>=4.2.0
 pytype>=2024.10.11
 pillow>=11.1.0
+httplib2==0.22.0
 sentencepiece>=0.2.0
-tensorflow-text>=2.13.0
+tensorflow-text==2.19.0
+grpcio-status==1.48.2
+pyparsing==3.2.0
 tensorflow>=2.13.0
 tensorflow-datasets>=4.9.5
 tensorflow-metadata>=1.14.0
@@ -38,7 +41,7 @@ tensorboardx>=2.6.2.2
 tensorboard-plugin-profile>=2.19.0
 tiktoken>=0.9.0
 transformers>=4.52.4
-transformer-engine[jax]>=2.1.0
+#transformer-engine[jax]>=2.1.0
 jsonlines>=4.0.0
 pathwaysutils@git+https://github.com/AI-Hypercomputer/pathways-utils.git
 omegaconf>=2.3.0
