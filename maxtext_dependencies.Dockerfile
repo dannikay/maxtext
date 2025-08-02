@@ -12,11 +12,11 @@ RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyri
 # Install the Google Cloud SDK
 RUN apt-get update && apt-get install -y google-cloud-sdk
 
-# Set the default Python version to 3.10
-RUN update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.10 1
+# Set the default Python version to 3.11
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.11 1
 
-# Set environment variables for Google Cloud SDK and Python 3.10
-ENV PATH="/usr/local/google-cloud-sdk/bin:/usr/local/bin/python3.10:${PATH}"
+# Set environment variables for Google Cloud SDK and Python 3.11
+ENV PATH="/usr/local/google-cloud-sdk/bin:/usr/local/bin/python3.11:${PATH}"
 
 # Set environment variables via build arguments
 ARG MODE
