@@ -82,6 +82,7 @@ def main(config):
 
 
 if __name__ == "__main__":
+  jax.config.update("jax_default_prng_impl", "unsafe_rbg")
   os.environ["TF_CPP_MIN_LOG_LEVEL"] = "0"
   cfg = pyconfig.initialize(sys.argv)
   main(cfg)
