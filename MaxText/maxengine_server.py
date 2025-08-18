@@ -66,7 +66,7 @@ def main(config):
   # TODO: Add grpc credentials for OSS.
   # pylint: disable=unexpected-keyword-arg
   jetstream_server = server_lib.run(
-      threads=256,
+      threads=config.jetstream_server_threads,
       port=9000,
       config=server_config,
       devices=devices,
