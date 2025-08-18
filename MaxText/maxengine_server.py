@@ -27,9 +27,9 @@ from MaxText import pyconfig
 from MaxText import maxengine_config
 
 # _PORT = flags.DEFINE_integer('port', 9000, 'port to listen on')
-_THREADS = flags.DEFINE_integer(
-    'jetstream_server_threads', 64, 'number of worker threads in thread pool'
-)
+# _THREADS = flags.DEFINE_integer(
+#     'threads', 64, 'number of worker threads in thread pool'
+# )
 # _CONFIG = flags.DEFINE_string(
 #     'config',
 #     'MaxtextInterleavedServer',
@@ -66,7 +66,7 @@ def main(config):
   # TODO: Add grpc credentials for OSS.
   # pylint: disable=unexpected-keyword-arg
   jetstream_server = server_lib.run(
-      threads=_THREADS,
+      threads=config.jetstream_server_threads,
       port=9000,
       config=server_config,
       devices=devices,
@@ -82,7 +82,6 @@ def main(config):
 
 
 if __name__ == "__main__":
-  jax.config.update("jax_default_prng_impl", "unsafe_rbg")
   os.environ["TF_CPP_MIN_LOG_LEVEL"] = "0"
   cfg = pyconfig.initialize(sys.argv)
   main(cfg)
